@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="${createLink(action: 'index')}">
+                <a class="navbar-brand" href="${createLink(uri: '/')}">
                     <i class="fa doe-icon">
                         <asset:image src="doe1.png"/>
                     </i>
@@ -53,7 +53,7 @@
                 </ul>  
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <g:link action="index">Home</g:link>
+                        <g:link uri="/">Home</g:link>
                     </li>
                     </sec:ifAnyGranted>
                 </ul>                
@@ -86,7 +86,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="${createLink(action: 'index')}" class="dropdown-toggle" aria-expanded="false">Home</span></a>
+                        <a href="${createLink(uri: '/')}" class="dropdown-toggle" aria-expanded="false">Home</span></a>
                     </li>
                     </sec:ifAnyGranted>
                 </ul>
@@ -132,7 +132,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <g:link action="index">Home</g:link>
+                        <g:link uri="/">Home</g:link>
                     </li>
                     </sec:ifAnyGranted>
                 </ul>

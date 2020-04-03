@@ -21,40 +21,42 @@
             <h1>Welcome to Record Management System</h1>
 <div class="container">
     <div class="row">
-        <h2>
-            Cool Buttons With Labels</h2>
-        <div class="col-md-12">
-            <button type="button" class="btn btn-labeled btn-success">
-                <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>Success</button>
-            <button type="button" class="btn btn-labeled btn-danger">
-                <span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>Cancel</button>
-            <br />
-            <button type="button" class="btn btn-labeled btn-warning">
-                <span class="btn-label"><i class="glyphicon glyphicon-bookmark"></i></span>Bookmark</button>
-            <button type="button" class="btn btn-labeled btn-primary">
-                <span class="btn-label"><i class="glyphicon glyphicon-camera"></i></span>Camera</button>
-            <br />
-            <button type="button" class="btn btn-labeled btn-default">
-                <span class="btn-label"><i class="glyphicon glyphicon-chevron-left"></i></span>Left</button>
-            <button type="button" class="btn btn-labeled btn-default">
-                <span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span>
-                Right</button>
-            <br />
-            <button type="button" class="btn btn-labeled btn-success">
-                <span class="btn-label"><i class="glyphicon glyphicon-thumbs-up"></i></span>Thumbs
-                Up</button>
-            <button type="button" class="btn btn-labeled btn-danger">
-                <span class="btn-label"><i class="glyphicon glyphicon-thumbs-down"></i></span>Thumbs
-                Down</button>
-            <br />
-            <button type="button" class="btn btn-labeled btn-info">
-                <span class="btn-label"><i class="glyphicon glyphicon-refresh"></i></span>Refresh</button>
-            <button type="button" class="btn btn-labeled btn-danger">
-                <span class="btn-label"><i class="glyphicon glyphicon-trash"></i></span>Trash</button>
-            <br />
-            <a class="btn btn-success btn-labeled" href="http://www.jquery2dotnet.com" role="button">
-                <span class="btn-label"><i class="glyphicon glyphicon-info-sign"></i></span>Info Web</a>
+
+        <div class="col-md-6">
+            <a href="${createLink(controller: 'delivery',action: 'index')}">
+                <button type="button" class="btn btn-labeled btn-primary btn-lg btn-block p-5" style="font-size:500%;">
+                    <span class="btn-label"><i class="glyphicon glyphicon-envelope"></i>
+                    </span>Delivery
+                </button>
+            </a>
         </div>
+        <div class="col-md-6">
+            <a href="${createLink(controller: 'city',action: 'index')}">
+                <button type="button" class="btn btn-labeled btn-success btn-lg btn-block p-5" style="font-size:500%;">
+                    <span class="btn-label"><i class="glyphicon glyphicon-road"></i>
+                    </span>City
+                </button>
+            </a>
+        </div>
+        </div>
+        <br>
+        <div class="row">
+        <div class="col-md-6">
+            <a href="${createLink(controller: 'bureau',action: 'index')}">
+                <button type="button" class="btn btn-labeled btn-warning btn-lg btn-block p-5" style="font-size:500%;">
+                    <span class="btn-label"><i class="glyphicon glyphicon-lock"></i>
+                    </span>Bureau
+                </button>
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a href="${createLink(controller: 'remarks',action: 'index')}">
+                <button type="button" class="btn btn-labeled btn-danger btn-lg btn-block p-5" style="font-size:500%;">
+                    <span class="btn-label"><i class="glyphicon glyphicon-bookmark"></i>
+                    </span>Remarks
+                </button>
+            </a>
+        </div>                
     </div>
 </div>
 
