@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MyRMD" language="groovy" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="20" bottomMargin="20" uuid="82675818-2f05-4fcd-b715-33fabec2d29e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="PARAMETER_COMPANY" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="PARAMETER_TYPE" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAMETER_FROM" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAMETER_TO" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     certificate.`id` AS certificate_id,
+     certificate.`version` AS certificate_version,
+     certificate.`certificate_currency_peso` AS certificate_certificate_currency_peso,
+     certificate.`certificate_duty` AS certificate_certificate_duty,
+     certificate.`certificate_tec_number` AS certificate_certificate_tec_number,
+     certificate.`certificate_place` AS certificate_certificate_place,
+     certificate.`certificate_date_created` AS certificate_certificate_date_created,
+     certificate.`certificate_aquisition_tec_number` AS certificate_certificate_aquisition_tec_number,
+     certificate.`purpose_id` AS certificate_purpose_id,
+     certificate.`certificate_tax` AS certificate_certificate_tax,
+     certificate.`certificate_description` AS certificate_certificate_description,
+     certificate.`certificate_currency_foreign` AS certificate_certificate_currency_foreign,
+     certificate.`certificate_or_number` AS certificate_certificate_or_number,
+     certificate.`company_id` AS certificate_company_id,
+     certificate.`certificate_tec_date_issued` AS certificate_certificate_tec_date_issued,
+     certificate.`type_id` AS certificate_type_id,
+     certificate.`certificate_date_released` AS certificate_certificate_date_released,
+     company.`id` AS company_id,
+     company.`version` AS company_version,
+     company.`company_date_created` AS company_company_date_created,
+     company.`company_address` AS company_company_address,
+     company.`company_name` AS company_company_name,
+     company.`company_number` AS company_company_number,
+     type.`id` AS type_id,
+     type.`version` AS type_version,
+     type.`type_date_created` AS type_type_date_created,
+     type.`type_name` AS type_type_name,
+     purpose.`id` AS purpose_id,
+     purpose.`version` AS purpose_version,
+     purpose.`purpose_date_created` AS purpose_purpose_date_created,
+     purpose.`purpose_description` AS purpose_purpose_description
+FROM
+     `company` company INNER JOIN `certificate` certificate ON company.`id` = certificate.`company_id`
+     INNER JOIN `type` type ON certificate.`type_id` = type.`id`
+     INNER JOIN `purpose` purpose ON certificate.`purpose_id` = purpose.`id`
+WHERE company.`company_name` LIKE '%$P!{PARAMETER_COMPANY}%'  AND type.`type_name` = '%$P!{PARAMETER_TYPE}%' BETWEEN $P{PARAMETER_FROM} AND $P{PARAMETER_TO}]]>
+	</queryString>
+	<field name="certificate_id" class="java.lang.Long"/>
+	<field name="certificate_version" class="java.lang.Long"/>
+	<field name="certificate_certificate_currency_peso" class="java.lang.String"/>
+	<field name="certificate_certificate_duty" class="java.lang.String"/>
+	<field name="certificate_certificate_tec_number" class="java.lang.String"/>
+	<field name="certificate_certificate_place" class="java.lang.String"/>
+	<field name="certificate_certificate_date_created" class="java.sql.Timestamp"/>
+	<field name="certificate_certificate_aquisition_tec_number" class="java.lang.String"/>
+	<field name="certificate_purpose_id" class="java.lang.Long"/>
+	<field name="certificate_certificate_tax" class="java.lang.String"/>
+	<field name="certificate_certificate_description" class="java.lang.String"/>
+	<field name="certificate_certificate_currency_foreign" class="java.lang.String"/>
+	<field name="certificate_certificate_or_number" class="java.lang.String"/>
+	<field name="certificate_company_id" class="java.lang.Long"/>
+	<field name="certificate_certificate_tec_date_issued" class="java.sql.Timestamp"/>
+	<field name="certificate_type_id" class="java.lang.Long"/>
+	<field name="certificate_certificate_date_released" class="java.sql.Timestamp"/>
+	<field name="company_id" class="java.lang.Long"/>
+	<field name="company_version" class="java.lang.Long"/>
+	<field name="company_company_date_created" class="java.sql.Timestamp"/>
+	<field name="company_company_address" class="java.lang.String"/>
+	<field name="company_company_name" class="java.lang.String"/>
+	<field name="company_company_number" class="java.lang.String"/>
+	<field name="type_id" class="java.lang.Long"/>
+	<field name="type_version" class="java.lang.Long"/>
+	<field name="type_type_date_created" class="java.sql.Timestamp"/>
+	<field name="type_type_name" class="java.lang.String"/>
+	<field name="purpose_id" class="java.lang.Long"/>
+	<field name="purpose_version" class="java.lang.Long"/>
+	<field name="purpose_purpose_date_created" class="java.sql.Timestamp"/>
+	<field name="purpose_purpose_description" class="java.lang.String"/>
+	<group name="certificate_id">
+		<groupExpression><![CDATA[$F{certificate_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="575" height="26" uuid="f1ef02df-903a-4232-be83-11590ef86a0b"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMPANY REPORT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="5" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="18" height="20" uuid="66b4d03e-be47-4a55-960b-20e16ce6a854"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="18" y="0" width="136" height="20" uuid="6597e51d-ee3f-4c58-a796-3f59c18cd92f"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMPANY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="321" y="0" width="175" height="20" uuid="f1f9dcc3-0218-4d5e-bebc-c19a6485e0e5"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPTION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="0" width="57" height="20" uuid="99700217-600d-455d-bea7-7eab5249d41d"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TEC NO.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="228" y="0" width="36" height="20" uuid="b6cbc6d7-f004-4cba-840f-83add099e876"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TYPE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="154" y="0" width="74" height="20" uuid="f9d76b29-1ab7-464d-b5c0-a02df9aa0a0f"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NATURE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="496" y="0" width="79" height="20" uuid="5b495f42-732f-4f8d-98f8-7edd25db7c71"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FOREIGN CUR.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="18" height="20" uuid="acb47818-e05c-408b-aae9-f4d6ccfcead3"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{certificate_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="18" y="0" width="136" height="20" uuid="ef5082d2-6b1c-4def-8ff2-766f95346056"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{company_company_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="321" y="0" width="175" height="20" uuid="4ada16d8-386a-4d5b-b3bd-95d2d9f4ac88"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{certificate_certificate_description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="264" y="0" width="57" height="20" uuid="18225ee2-78ff-4c7c-9bec-e25a2817759d"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{certificate_certificate_tec_number}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="0" width="36" height="20" uuid="45530e7d-9d81-429f-976e-3fcf87e14aa4"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{type_type_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="154" y="0" width="74" height="20" uuid="b925b857-b385-492b-8412-d63606808c51"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{purpose_purpose_description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="496" y="0" width="79" height="20" uuid="0db8fb5e-201a-4f31-ae42-a6c889122daa"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{certificate_certificate_currency_foreign}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="43" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
