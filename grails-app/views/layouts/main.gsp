@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="${createLink(action: 'index')}">
+                <a class="navbar-brand" href="${createLink(controller:'delivery', action: 'index')}">
                     <i class="fa doe-icon">
                         <asset:image src="doe1.png"/>
                     </i>
@@ -75,7 +75,7 @@
                 </ul>                 
                 <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Delivery<span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Library<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <g:link controller="delivery" action="index">Delivery</g:link>
                                 <g:link controller="city" action="index">City</g:link>
