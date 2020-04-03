@@ -1,4 +1,4 @@
-<%@ page import="doe.gov.ph.UserRole" %>
+<%@ page import="doe.gov.ph.Role" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,7 +21,7 @@
               </div>
             </div>
 
-            <form class="ui form" action="/user/searchResults" method="post">
+            <form class="ui form" action="${createLink(controller:'user', action: 'searchResults')}" method="post">
               <div class="ui fluid action input">
                 <input type="text" placeholder="Search..." name="search" id="search" value="${params.search}">
                 <button class="ui button"  type="submit" name="submit" value="Search"><i class="search icon"></i></button>
@@ -67,7 +67,7 @@
               <i class="close icon"></i>
               <div class="header">Create User</div>
             <div class="ui form">
-            <form action="/user/save" method="post" >
+            <form action="${createLink(controller:'user', action: 'save')}" method="post" >
                 <fieldset class="form">
                     <f:with bean="user">
                       <div class="field">
@@ -86,9 +86,14 @@
                       <div class="field">
                         <input type="password" placeholder="Password" name="password">
                       </div>
-%{--                       <div class="field">
-                        <input type="text" placeholder="User Role" name="userRole">
-                      </div> --}%
+                      <div class="form-group">
+                            <select class="ui fluid search dropdown" id="Role" name="Role">
+                              <option>Select Role ...</option>
+                              <g:each in="${Role.list()}">
+                                  <option value="${it.id}">${it.authority}</option>
+                              </g:each>
+                            </select>
+                      </div>
                       <div class="ui toggle checkbox">
                         <input type="checkbox" placeholder="Account Locked" name="accountLocked">
                         <label>Account Locked</label>

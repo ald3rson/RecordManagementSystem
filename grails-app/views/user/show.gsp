@@ -34,7 +34,11 @@
                     <td>Division Name</td>
                     <td>${user.divisionName}</td>
                   </tr>
-                                    <tr>
+                  <tr>
+                    <td>User Role</td>
+                    <td>${user.userRole}</td>
+                  </tr>
+                  <tr>
                     <td>Account Locked</td>
                     <td>${user.accountLocked}</td>
                   </tr>
