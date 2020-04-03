@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/#">
+                <a class="navbar-brand" href="${createLink(action: 'index')}">
                     <i class="fa doe-icon">
                         <asset:image src="doe1.png"/>
                     </i>
