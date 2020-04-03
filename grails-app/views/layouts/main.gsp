@@ -12,7 +12,7 @@
         <asset:javascript src="jquery-3.2.1.min.js"/>
         <asset:javascript src="semantic.min.js"/>
         <asset:stylesheet src="semantic.min.css"/>
-        <asset:javascript src="http://code.highcharts.com/highcharts.js"/>
+        <asset:javascript src="Chart.min.js"/>
     <g:layoutHead/>
 </head>
 <body>
