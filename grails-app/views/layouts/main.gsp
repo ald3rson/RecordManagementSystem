@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="${createLink(controller:'delivery', action: 'index')}">
+                <a class="navbar-brand" href="${createLink(action: 'index')}">
                     <i class="fa doe-icon">
                         <asset:image src="doe1.png"/>
                     </i>
@@ -103,7 +103,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Library<span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Library<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <g:link controller="company" action="index">Company</g:link>
                                 <g:link controller="purpose" action="index">Purpose</g:link>
@@ -115,14 +115,14 @@
                     <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <g:link controller="certificate" action="search">Per Company</g:link>
-                                <g:link controller="certificate" action="search2">Per Description</g:link>
+                                <g:link controller="certificate" action="search">Company</g:link>
+                                <g:link controller="certificate" action="search2">Description</g:link>
                             </ul>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Certificate List<span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Certificate<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <g:link controller="certificate" action="index">TEC List</g:link>
                                 <g:link controller="certificate" action="index2">COE List</g:link>
